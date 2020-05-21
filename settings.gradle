@@ -1,0 +1,2 @@
+rootProject.name='HealthKeeperPlz'
+include ':app'
