@@ -20,6 +20,6 @@
         <activity android:name=".TrainerActivity" />
         <activity android:name=".InbodyActivity" />
         <activity android:name=".SettingActivity" />
-
+        <activity android:name=".ResultActivity" />
     </application>
 </manifest>

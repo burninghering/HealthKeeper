@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -25,7 +26,15 @@ public class MainActivity extends AppCompatActivity {
         weight = findViewById(R.id.weight); //BMI - 혜린
         height = findViewById(R.id.height);
         resulttext = findViewById(R.id.result);
-    }
+
+        Button imageButton = (Button) findViewById(R.id.calculate_button);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                startActivity(intent);
+            }
+        });
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,9 +96,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         calculation = "Result:\n\n" + bmi + "\n" + BMIresult;
-
-
-
         resulttext.setText(calculation);
     }
 }
