@@ -14,27 +14,43 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText weight, height; //BMI - 혜린
-    TextView resulttext;
-    String calculation, BMIresult;
+    EditText editText;  // 이름입력
+    EditText editText2; // 나이입력
+    EditText editText3; // 몸무게 입력
+    EditText editText4; // 키 입력
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        weight = findViewById(R.id.weight); //BMI - 혜린
-        height = findViewById(R.id.height);
-        resulttext = findViewById(R.id.result);
-
-        Button imageButton = (Button) findViewById(R.id.calculate_button);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
-                startActivity(intent);
-            }
-        });
+        editText = (EditText) findViewById(R.id.editText);
+        editText2 = (EditText) findViewById(R.id.editText2);
+        editText3 = (EditText) findViewById(R.id.editText3);
+        editText4 = (EditText) findViewById(R.id.editText4);
         }
+
+    public void Button1Clicked(View v) {
+        // 사용자가 입력한 나이와 이름을 가져와서 임시 변수에 저장
+        String inputName = this.editText.getText().toString().trim();
+        String inputAge = this.editText2.getText().toString().trim();
+        String inputWeight = this.editText3.getText().toString().trim();
+        String inputHeight = this.editText4.getText().toString().trim();
+
+        // 데이터 입력여부 확인
+        if(inputName.length() > 0 && inputAge.length() > 0) {
+
+            //Intent 객체를 생성
+            Intent intent = new Intent(this, ResultActivity.class);
+
+            // 사용자가 입력한 이름과 나이를 인텐트 객체에 저장
+            intent.putExtra("name", inputName);
+            intent.putExtra("age", Integer.parseInt(inputAge));
+            intent.putExtra("weight", Integer.parseInt(inputWeight));
+            intent.putExtra("height", Integer.parseInt(inputHeight));
+            startActivity(intent);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,36 +82,5 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public void calculateBMI(View view) { //BMI - 혜린
-        String S1 = weight.getText().toString();
-        String S2 = height.getText().toString();
 
-
-
-        float weightValue = Float.parseFloat(S1);
-        float heightValue = Float.parseFloat(S2) / 100;
-
-
-
-        float bmi = weightValue / (heightValue * heightValue);
-
-
-
-        if(bmi < 16){
-            BMIresult = "Severely Under Weight";
-        }else if(bmi < 18.5){
-            BMIresult = "Under Weight";
-        }else if(bmi >= 18.5 && bmi <= 24.9){
-            BMIresult = "Normal Weight";
-        }else if (bmi >= 25 && bmi <= 29.9){
-            BMIresult = "Overweight";
-        }else{
-            BMIresult = "Obese";
-        }
-
-
-
-        calculation = "Result:\n\n" + bmi + "\n" + BMIresult;
-        resulttext.setText(calculation);
-    }
 }

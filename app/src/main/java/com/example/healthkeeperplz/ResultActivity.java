@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 
@@ -15,7 +16,11 @@ import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
-    EditText weight, height; //BMI - 혜린
+    //각 입력한 데이터를 보여줄 객체 참조 변수 선언
+    private TextView name;
+    private TextView age;
+    private TextView weight;
+    private TextView height;
     TextView resulttext;
     String calculation, BMIresult;
 
@@ -24,9 +29,69 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        weight = findViewById(R.id.weight); //BMI - 혜린
-        height = findViewById(R.id.height);
+        this.name = (TextView) findViewById(R.id.name);
+        this.age = (TextView) findViewById(R.id.age);
+        this.weight = (TextView) findViewById(R.id.weight);
+        this.height = (TextView) findViewById(R.id.height);
         resulttext = findViewById(R.id.result);
+
+        //이전에 실행된 액티비티 클래스에서 사용한 인텐트 객체에 접근
+        Intent intent = this.getIntent();
+
+        //이전 액티비티 클래스로부터 이름 가져오기
+        String name = intent.getStringExtra("name");
+        // String 형식의 데이터를 받아오므로 getStringExtra
+        if(name == null) {
+            this.name.setText("이름 가져오기 실패");
+        }
+        else{
+            Log.d("mylogtag", "가져온 이름은" + name);
+            this.name.setText(name);
+        }
+
+        //이전 액티비티 클래스로부터 나이 가져오기
+        int age = intent.getIntExtra("age", -1);
+        // int형 데이터를 받기위해서 getIntExtra를 사용
+        if(age != -1) {
+            Log.d("mylogtag", "가져온 나이는 = " + age);
+            this.age.setText(age+"");
+        }
+        else{
+            Log.d("mylogtag","나이 가져오기 실패");
+            this.age.setText("나이 가져오기 실패");
+        }
+
+        //이전 액티비티 클래스로부터 몸무게 가져오기
+        int weight = intent.getIntExtra("weight", -1);
+        // int형 데이터를 받기위해서 getIntExtra를 사용
+        if(weight != -1) {
+            Log.d("mylogtag", "가져온 몸무게는 = " + weight);
+            this.weight.setText(weight+"");
+        }
+        else{
+            Log.d("mylogtag","몸무게 가져오기 실패");
+            this.weight.setText("몸무게 가져오기 실패");
+        }
+
+        //이전 액티비티 클래스로부터 키 가져오기
+        int height = intent.getIntExtra("height", -1);
+        // int형 데이터를 받기위해서 getIntExtra를 사용
+        if(height != -1) {
+            Log.d("mylogtag", "가져온 키는 = " + height);
+            this.height.setText(height+"");
+        }
+        else{
+            Log.d("mylogtag","키 가져오기 실패");
+            this.height.setText("키 가져오기 실패");
+        }
+    }
+
+    public void ClickedBack(View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+
+        startActivity(intent);
+
+        finish();
     }
 
     @Override
@@ -74,20 +139,20 @@ public class ResultActivity extends AppCompatActivity {
 
 
         if(bmi < 16){
-            BMIresult = "Severely Under Weight";
+            BMIresult = "심각한 저체중";
         }else if(bmi < 18.5){
-            BMIresult = "Under Weight";
+            BMIresult = "저체중";
         }else if(bmi >= 18.5 && bmi <= 24.9){
-            BMIresult = "Normal Weight";
+            BMIresult = "보통 체중";
         }else if (bmi >= 25 && bmi <= 29.9){
-            BMIresult = "Overweight";
+            BMIresult = "과체중";
         }else{
-            BMIresult = "Obese";
+            BMIresult = "데이터를 다시 입력해주세요.";
         }
 
 
 
-        calculation = "Result:\n\n" + bmi + "\n" + BMIresult;
+        calculation = bmi + ", " + BMIresult;
         resulttext.setText(calculation);
     }
 }

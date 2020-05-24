@@ -1,67 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Weight"
-        android:textSize="30dp"
-        android:layout_marginTop="80dp"></TextView>
-
-
-
-    <EditText
-        android:id="@+id/weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="6"
-        android:textAlignment="center"></EditText>
-
-
-
+        android:gravity="center"
+        android:text="인바디 결과 입력 화면"
+        android:textSize="20sp" />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Height"
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"></TextView>
+        android:text=""
+        />
 
-
-
-    <EditText
-        android:id="@+id/height"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="6"
-        android:textAlignment="center"></EditText>
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="이름 입력 : "
+            android:textSize="20sp"
+            />
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="이름을 입력해주세요"
+            android:inputType="text"
+            android:singleLine="true" />
+    </LinearLayout>
 
-
-    <Button
-        android:id="@+id/calculate_button"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Calculate BMI"
-        android:layout_marginTop="20dp"
-        android:onClick="calculateBMI"></Button>
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="나이 입력 : "
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="나이를 입력해주세요"
+            android:inputType="text"
+            android:singleLine="true"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="몸무게 입력 : "
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="몸무게를 입력해주세요"
+            android:inputType="text"
+            android:singleLine="true"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="키 입력 : "
+            android:textSize="20sp"
+            />
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="키를 입력해주세요"
+            android:inputType="text"
+            android:singleLine="true"
+            />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <Button
+            android:id="@+id/send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#AAB9FF"
+            android:onClick="Button1Clicked"
 
-
-
-
-
+            android:text="다음" />
+    </LinearLayout>
 </LinearLayout>
