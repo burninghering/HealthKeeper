@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <CheckBox
+        android:id="@+id/chest1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가슴이 답답"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <CheckBox
+        android:id="@+id/anorexia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="식욕부진"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <CheckBox
+        android:id="@+id/xeroderma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="피부건조"
+        tools:layout_editor_absoluteX="284dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <CheckBox
+        android:id="@+id/dehydration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="탈수"
+        tools:layout_editor_absoluteX="284dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <CheckBox
+        android:id="@+id/fatigue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="피로"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <CheckBox
+        android:id="@+id/pruritus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가려움"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <CheckBox
+        android:id="@+id/enrmsenrms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="두근거림"
+        tools:layout_editor_absoluteX="284dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <CheckBox
+        android:id="@+id/chest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가슴통증"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <CheckBox
+        android:id="@+id/impotent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="무기력함"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <CheckBox
+        android:id="@+id/dizziness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="어지러움"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <CheckBox
+        android:id="@+id/Urinaryfrequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="빈뇨"
+        tools:layout_editor_absoluteX="284dp"
+        tools:layout_editor_absoluteY="156dp" />
+
+    <CheckBox
+        android:id="@+id/sick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메스꺼움"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="265dp"
+        android:layout_height="61dp"
+        android:gravity="center_horizontal"
+        android:text="증상을 체크하세요"
+        android:textAlignment="center"
+        android:textColor="#2A8DBA"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="73dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <Button
+        android:id="@+id/transbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="결과 전송"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="569dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
