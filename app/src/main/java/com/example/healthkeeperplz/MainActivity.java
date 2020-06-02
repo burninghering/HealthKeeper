@@ -28,10 +28,43 @@ public class MainActivity extends AppCompatActivity {
     private int hour, minute;
 
 
-    EditText weight, height; //BMI - 혜린
-    TextView resulttext;
-    String calculation, BMIresult;
+    EditText editText;  // 이름입력
+    EditText editText2; // 나이입력
+    EditText editText3; // 몸무게 입력
+    EditText editText4; // 키 입력
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editText = (EditText) findViewById(R.id.editText);
+        editText2 = (EditText) findViewById(R.id.editText2);
+        editText3 = (EditText) findViewById(R.id.editText3);
+        editText4 = (EditText) findViewById(R.id.editText4);
+    }
+
+    public void Button1Clicked(View v) {
+        // 사용자가 입력한 나이와 이름을 가져와서 임시 변수에 저장
+        String inputName = this.editText.getText().toString().trim();
+        String inputAge = this.editText2.getText().toString().trim();
+        String inputWeight = this.editText3.getText().toString().trim();
+        String inputHeight = this.editText4.getText().toString().trim();
+
+        // 데이터 입력여부 확인
+        if(inputName.length() > 0 && inputAge.length() > 0) {
+
+            //Intent 객체를 생성
+            Intent intent = new Intent(this, ResultActivity.class);
+
+            // 사용자가 입력한 이름과 나이를 인텐트 객체에 저장
+            intent.putExtra("name", inputName);
+            intent.putExtra("age", Integer.parseInt(inputAge));
+            intent.putExtra("weight", Integer.parseInt(inputWeight));
+            intent.putExtra("height", Integer.parseInt(inputHeight));
+            startActivity(intent);
+        }
+    }
 
 
     @Override
