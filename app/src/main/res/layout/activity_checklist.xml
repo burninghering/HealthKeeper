@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".checklistActivity">
 
     <CheckBox
         android:id="@+id/chest1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
         android:text="가슴이 답답"
-        tools:layout_editor_absoluteX="161dp"
+        app:layout_constraintEnd_toStartOf="@+id/Urinaryfrequency"
         tools:layout_editor_absoluteY="156dp" />
 
     <CheckBox
@@ -19,63 +21,83 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="식욕부진"
-        tools:layout_editor_absoluteX="161dp"
+        app:layout_constraintEnd_toStartOf="@+id/xeroderma"
+        app:layout_constraintStart_toEndOf="@+id/impotent"
         tools:layout_editor_absoluteY="334dp" />
 
     <CheckBox
         android:id="@+id/xeroderma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:text="피부건조"
-        tools:layout_editor_absoluteX="284dp"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="334dp" />
 
     <CheckBox
         android:id="@+id/dehydration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
         android:text="탈수"
-        tools:layout_editor_absoluteX="284dp"
-        tools:layout_editor_absoluteY="244dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="245dp" />
 
     <CheckBox
         android:id="@+id/fatigue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
         android:text="피로"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="427dp" />
+        app:layout_constraintStart_toEndOf="@+id/sick"
+        tools:layout_editor_absoluteY="416dp" />
 
     <CheckBox
         android:id="@+id/pruritus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
         android:text="가려움"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="244dp" />
+        app:layout_constraintBottom_toTopOf="@+id/impotent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dizziness" />
 
     <CheckBox
         android:id="@+id/enrmsenrms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="280dp"
         android:text="두근거림"
-        tools:layout_editor_absoluteX="284dp"
-        tools:layout_editor_absoluteY="427dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/xeroderma"
+        app:layout_constraintVertical_bias="0.943" />
 
     <CheckBox
         android:id="@+id/chest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="가슴통증"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="244dp" />
+        app:layout_constraintBottom_toTopOf="@+id/anorexia"
+        app:layout_constraintEnd_toStartOf="@+id/dehydration"
+        app:layout_constraintStart_toEndOf="@+id/pruritus"
+        app:layout_constraintTop_toBottomOf="@+id/chest1"
+        app:layout_constraintVertical_bias="0.491" />
 
     <CheckBox
         android:id="@+id/impotent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:text="무기력함"
-        tools:layout_editor_absoluteX="30dp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="334dp" />
 
     <CheckBox
@@ -83,24 +105,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="어지러움"
-        tools:layout_editor_absoluteX="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/chest1"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="156dp" />
 
     <CheckBox
         android:id="@+id/Urinaryfrequency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
         android:text="빈뇨"
-        tools:layout_editor_absoluteX="284dp"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="156dp" />
 
     <CheckBox
         android:id="@+id/sick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:text="메스꺼움"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="427dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/impotent"
+        app:layout_constraintVertical_bias="0.15" />
 
     <TextView
         android:id="@+id/textView1"
@@ -111,15 +140,19 @@
         android:textAlignment="center"
         android:textColor="#2A8DBA"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="39dp" />
+        app:layout_constraintBottom_toTopOf="@+id/chest1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/transbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="결과 전송"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="569dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fatigue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
